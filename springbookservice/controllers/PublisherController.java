@@ -18,9 +18,9 @@ import java.util.Optional;
 @RequestMapping("/api/v1/publishers")
 public class PublisherController {
 
-    PublisherRepository publisherRepository;
+    private final PublisherRepository publisherRepository;
 
-    BookRepository bookRepository;
+    private final BookRepository bookRepository;
 
     @Autowired
     public PublisherController(PublisherRepository publisherRepository, BookRepository bookRepository) {

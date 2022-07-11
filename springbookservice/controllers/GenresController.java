@@ -17,9 +17,9 @@ import java.util.Optional;
 @RequestMapping("/api/v1/genres")
 public class GenresController {
 
-    BookRepository bookRepository;
+    private final BookRepository bookRepository;
 
-    GenresRepository genresRepository;
+    private final GenresRepository genresRepository;
 
     @Autowired
     public GenresController(BookRepository bookRepository, GenresRepository genresRepository) {

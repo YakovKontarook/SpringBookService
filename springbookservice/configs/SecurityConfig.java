@@ -21,6 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String BOOK_ENDPOINT = "/api/v1/books/**";
     private static final String GENRE_ENDPOINT = "/api/v1/books/genres/**";
     private static final String PUBLISHER_ENDPOINT = "/api/v1/books/publishers/**";
+    private static final String LIKE_ENDPOINT = "/api/v1/books/**/like";
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -31,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers(LOGIN_ENDPOINT).permitAll()
-                .antMatchers("/api/v1/books/**/like").hasAnyRole("USER", "STUFF", "ADMIN")
+                .antMatchers(LIKE_ENDPOINT).hasAnyRole("USER", "STUFF", "ADMIN")
                 .antMatchers(HttpMethod.GET, BOOK_ENDPOINT, GENRE_ENDPOINT, PUBLISHER_ENDPOINT).permitAll()
                 .antMatchers(HttpMethod.PUT, BOOK_ENDPOINT, GENRE_ENDPOINT, PUBLISHER_ENDPOINT).hasAnyRole("STUFF", "ADMIN")
                 .antMatchers(HttpMethod.POST, BOOK_ENDPOINT, GENRE_ENDPOINT, PUBLISHER_ENDPOINT).hasAnyRole("STUFF", "ADMIN")

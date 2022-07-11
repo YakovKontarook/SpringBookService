@@ -32,11 +32,11 @@ public class AuthenticationController {
 
     private final JwtTokenProvider jwtTokenProvider;
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     private final RoleRepository roleRepository;
 
-    private BCryptPasswordEncoder passwordEncoder;
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
     public AuthenticationController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider,

@@ -87,9 +87,9 @@ class CriteriaBookRepositoryImpl implements CriteriaBookRepository {
                 getResultList();
     }
 
-    private static Predicate[] getPredicates(Double maxPrice, String searchQuery, Long publisherId,
-                                             List<Long> genreIds, Long userId, Long bookId,
-                                             CriteriaBuilder cb, Root<Book> book
+    public static Predicate[] getPredicates(Double maxPrice, String searchQuery, Long publisherId,
+                                            List<Long> genreIds, Long userId, Long bookId,
+                                            CriteriaBuilder cb, Root<Book> book
     ) {
         List<Predicate> predicates = new ArrayList<>();
         if (maxPrice != null) {

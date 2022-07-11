@@ -29,19 +29,21 @@ import static com.spring_web_book.springbookservice.entities.Book.sortByList;
 
 public class BookController {
 
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
 
-    private PublisherRepository publisherRepository;
+    private final PublisherRepository publisherRepository;
 
-    private GenresRepository genresRepository;
+    private final GenresRepository genresRepository;
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    private UserBookStateRepository userBookStateRepository;
+    private final UserBookStateRepository userBookStateRepository;
 
 
     @Autowired
-    public BookController(BookRepository bookRepository, PublisherRepository publisherRepository, GenresRepository genresRepository, UserRepository userRepository, UserBookStateRepository userBookStateRepository) {
+    public BookController(BookRepository bookRepository, PublisherRepository publisherRepository,
+                          GenresRepository genresRepository, UserRepository userRepository,
+                          UserBookStateRepository userBookStateRepository) {
         this.bookRepository = bookRepository;
         this.publisherRepository = publisherRepository;
         this.genresRepository = genresRepository;
